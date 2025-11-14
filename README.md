@@ -2,16 +2,16 @@
 
 ## Unofficial documentation for the server Web API.
 
-##### Adapted by @catb0t (psybrcatTRL) from the officially distributed Dedi `ReadMe.txt`.
+#### Adapted by @catb0t (psybrcatTRL) from the officially distributed Dedi `ReadMe.txt`.
 
-Best interpretation of the official ReadMe, but it may contain mistakes.
+**Best interpretation of the official ReadMe, but it may contain mistakes.**
 
-Especially, descriptions of exact field meanings/semantics and endpoint behaviour are inferred and written with my best knowledge of the game and testing the API, but may differ from the source code.
+**Especially**, descriptions of exact field meanings/semantics and endpoint behaviour are inferred and written with my best knowledge of the game and testing the API, but may differ from the source code.
 
 ## Host Web API Server
 You can enable Web API Server to get server status and player information.
 
-#### `DedicatedServerConfig.json` Parameters
+### `DedicatedServerConfig.json` Parameters
 
 - `<bEnableHostWebAPIServer>`
 
@@ -37,7 +37,7 @@ You can enable Web API Server to get server status and player information.
   It's recommended to change the default port, and be aware that it's non-TLS HTTP.
   </strong>
 
-#### Web API Return Values
+### Web API Return Values
 
 API returns JSON string with following format
 - `data`: `object` contains return data
@@ -54,7 +54,8 @@ API returns JSON string with following format
 }
 ```
 
-#### Web API password
+### Web API password
+
 You should set `"HostWebAPIServerPassword"` to a string in `DedicatedServerConfig.json`. *Currently, stored in plaintext, so be careful.*
 
 You need to pass the password as a parameter in each API call.
@@ -74,9 +75,9 @@ POST /player/kick/
      &reason=reason
 ```
 
-#### Web API Endpoint List
+## Web API Endpoint List
 
-##### GET
+### GET
 
 - **`GET /player/count`**
 
@@ -330,7 +331,7 @@ POST /player/kick/
   }
   ```
 
-#### POST
+### POST
 
 **Post parameters are provided in the request URL query string**, not as JSON.
 
