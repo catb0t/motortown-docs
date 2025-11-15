@@ -179,7 +179,7 @@ POST /player/kick/
   }
   ```
 
-<h5><code>GET /player/banlist`</code><h5>
+<h5><code>GET /player/banlist</code></h5>
 
   Returns:
 
