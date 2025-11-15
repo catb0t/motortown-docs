@@ -390,30 +390,111 @@ In general, for a successful request, the return object will have:
 
 - **`POST /player/ban`**
 
-  Parameters
+  Ban a player by their Steam ID. If the player is on the server, they will be kicked and shown the `reason` message in a dialog box. They'll be unable to rejoin the server until `hours` has passed, or permanently if not provided.
+
+  If the player isn't on the server, the player will be added as a `BannedPlayers` entry to the `GameUserSettings.ini`, with the other attributes recorded. As above, they won't be able to join until `hours` pass or indefinitely.
+
+  Parameters:
 
   - `unique_id` (**required**)
   <br>Player's `unique_id` (Steam ID) from `/player/list`
   - `hours`: (optional)
   <br>If missing, the ban will be applied permanently.
   - `reason` (optional)
-  <br>Reason for the ban. Will be shown to the player and appear in the GameUserSettings with the BannedPlayers entry.
+  <br>Reason for the ban. Will be shown to the player and appear in the `GameUserSettings` with the `BannedPlayers` entry.
 
-TODO:
+  Returns:
 
-```
-  POST /player/unban
-  parameters
-    unique_id (required. player's unique_id from player/banlist)
+  *Success*:
+    - `message` will be `Player banned`
+
+  Example:
+
+  ```json
+  {
+    "data": { },
+    "message": "Player banned",
+    "succeeded": true,
+    "code": 0
+  }
+  ```
 
 
-  POST /player/role/add
-  parameters
-    role (required. set player role "admin" or "police".)
-    unique_id (required. player's unique_id from player/list)
+<p></p>
 
-  POST /player/role/remove
-  parameters
-    role (required. set player role "admin" or "police".)
-    unique_id (required. player's unique_id from player/list)
-```
+- **`POST /player/unban`**
+
+  Parameters:
+
+  - `unique_id` (**required**
+  <br>Player's `unique_id` (Steam ID) from `player/banlist`
+
+  Returns:
+
+  *Success*:
+    - `message` will be `Player unbanned`
+
+  Example:
+
+  ```json
+  {
+    "data": { },
+    "message": "Player unbanned",
+    "succeeded": true,
+    "code": 0
+  }
+  ```
+
+<p></p>
+
+- **`POST /player/role/add`**
+
+  Add the player by Steam ID to the named role. Results in an immediate role change for an online player, and updates `GameUserSettings.ini` with the entry.
+
+  Because the `GameUserSettings` file is a flat data structure, each role applied to a player is its own line instead of a nested data structure either of Player objects with roles or Role objects with Players.
+
+  If a player has both `"admin"` and `"police"`, two separate line entries will denote the player and each role.
+
+  Parameters:
+
+  - `role` (**required**)
+  <br>Set player role
+  <br>Values: `"admin"` or `"police"`
+  - `unique_id` (**required**)
+  <br>Player's `unique_id` (Steam ID) from `player/list` or `GameUserSettings`
+
+  Returns:
+
+  *Success*:
+    - ?
+
+  Example:
+
+  ?
+
+<p></p>
+
+- **`POST /player/role/remove`**
+
+  Remove the player by Steam ID to the named role. Results in an immediate role change for an online player, and updates `GameUserSettings.ini` by removing the entry.
+
+  Because the `GameUserSettings` file is a flat data structure, each role applied to a player is its own line instead of a nested data structure either of Player objects with roles or Role objects with Players.
+
+  If a player has both `"admin"` and `"police"`, two separate line entries will denote the player and each role.
+
+  Parameters:
+
+  - `role` (**required**)
+  <br>Remove player role
+  <br>Value: `"admin"` or `"police"`
+  - `unique_id` (**required**)
+  <br>Player's `unique_id` from `player/list` or `GameUserSettings`
+
+  Returns:
+
+  *Success*:
+    - ?
+
+  Example:
+
+  ?
