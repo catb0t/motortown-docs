@@ -10,19 +10,19 @@
 
 ## Contents
 
-- [<u>**Hosting Web API Server**</u>](#hosting-web-api-server)
+- [<u><strong>Hosting Web API Server</strong></u>](#hosting-web-api-server)
 
-  - [<u>**`DedicatedServerConfig.json` Parameters**</u>](#DedicatedServerConfig.json-parameters)
+  - [<u><strong>`DedicatedServerConfig.json` Parameters</strong></u>](#DedicatedServerConfig.json-parameters)
 
-  - [<u>**About Web API Return Values**</u>](#about-web-api-return-values)
+  - [<u><strong>About Web API Return Values</strong></u>](#about-web-api-return-values)
 
-  - [<u>**About Web API Password**</u>](#about-web-api-password)
+  - [<u><strong>About Web API Password</strong></u>](#about-web-api-password)
 
-- [<u>**Web API Endpoint List**</u>](#web-api-endpoint-list)
+- [<u><strong>Web API Endpoint List</strong></u>](#web-api-endpoint-list)
 
-  - [<u>**GET Endpoints**</u>](#get-endpoints)
+  - [<u><strong>GET Endpoints</strong></u>](#get-endpoints)
 
-  - [<u>**POST Endpoints**</u>](#get-endpoints)
+  - [<u><strong>POST Endpoints</strong></u>](#get-endpoints)
 
 ## Hosting Web API Server
 You can enable Web API Server to get server status and player information.
@@ -93,6 +93,27 @@ POST /player/kick/
 ## Web API Endpoint List
 
 ### GET Endpoints
+
+**Get parameters are provided in the request URL query string**, not as JSON.
+
+- **`GET /version`**
+
+  Get the current game version string of the server.
+  <br>Version parts:
+  - `0.7.13` Semantic major/minor/patch game version
+
+  - `+CT4` Patch number of this test version. `CT` for Closed Test, `T` for Public Test, `TD` for Test Driver (unused)
+  - `(B804)` Build number (unique, sequential)
+
+  Returns:
+
+  - `version`: `string` Version string as above
+
+  Example:
+
+  ```json
+  "data": { "version": "0.7.13+CT4(B804)" }
+  ```
 
 - **`GET /player/count`**
 
@@ -166,7 +187,7 @@ POST /player/kick/
 
   Parameters:
 
-  - `role`: `string` (**required**)
+  - `role` (**required**)
   <br>Values: `"admin"` or `"police"`
 
   Returns:
@@ -305,25 +326,6 @@ POST /player/kick/
       }
     }
   }
-  ```
-
-- **`GET /version`**
-
-  Get the current game version string of the server.
-  <br>Version parts:
-  - `0.7.13` Semantic major/minor/patch game version
-
-  - `+CT4` Patch number of this test version, CT for Closed Test, T for Public Test, TD for Test Driver (unused)
-  - `(B804)` Build number (unique, sequential)
-
-  Returns:
-
-  - `version`: `string` Version string as above
-
-  Example:
-
-  ```json
-  "data": { "version": "0.7.13+CT4(B804)" }
   ```
 
 - **`GET /housing/list`**
