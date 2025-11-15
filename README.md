@@ -8,7 +8,23 @@
 
 **Especially**, descriptions of exact field meanings/semantics and endpoint behaviour are inferred and written with my best knowledge of the game and testing the API, but may differ from the source code.
 
-## Host Web API Server
+## Contents
+
+- <u>[**Hosting Web API Server**](#hosting-web-api-server)</u>
+
+  - <u>[**`DedicatedServerConfig.json` Parameters**](#DedicatedServerConfig.json-parameters)</u>
+
+  - <u>[**About Web API Return Values**](#about-web-api-return-values)</u>
+
+  - <u>[**About Web API Password**](#about-web-api-password)</u>
+
+- <u>[**Web API Endpoint List**](#web-api-endpoint-list)</u>
+
+  - <u>[**GET Endpoints**](#get-endpoints)</u>
+
+  - <u>[**POST Endpoints**](#get-endpoints)</u>
+
+## Hosting Web API Server
 You can enable Web API Server to get server status and player information.
 
 ### `DedicatedServerConfig.json` Parameters
@@ -36,7 +52,7 @@ You can enable Web API Server to get server status and player information.
 
   **It's recommended to change the default port, and be aware that it's non-TLS HTTP.**
 
-### Web API Return Values
+### About Web API Return Values
 
 API returns JSON string with following format
 - `data`: `object` contains return data
@@ -53,7 +69,7 @@ API returns JSON string with following format
 }
 ```
 
-### Web API password
+### About Web API password
 
 You should set `"HostWebAPIServerPassword"` to a string in `DedicatedServerConfig.json`. *Currently, stored in plaintext, so be careful.*
 
@@ -76,7 +92,7 @@ POST /player/kick/
 
 ## Web API Endpoint List
 
-### GET
+### GET Endpoints
 
 - **`GET /player/count`**
 
@@ -330,7 +346,7 @@ POST /player/kick/
   }
   ```
 
-### POST
+### POST Endpoints
 
 **Post parameters are provided in the request URL query string**, not as JSON.
 
