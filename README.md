@@ -364,8 +364,6 @@ In general, for a successful request, the return object will have:
   *Success*:
     - `message` will be `message sent`.
 
-<nl>
-
 - **`POST /player/kick`**
 
   Kick a player by Steam ID.
@@ -398,7 +396,8 @@ In general, for a successful request, the return object will have:
   <br>Player's `unique_id` (Steam ID) from `/player/list`
   - `hours`: (optional)
   <br>If missing, the ban will be applied permanently.
-  - `reason` (optional. reason for ban.)
+  - `reason` (optional)
+  <br>Reason for the ban. Will be shown to the player and appear in the GameUserSettings with the BannedPlayers entry.
 
 TODO:
 
@@ -418,4 +417,3 @@ TODO:
     role (required. set player role "admin" or "police".)
     unique_id (required. player's unique_id from player/list)
 ```
-
