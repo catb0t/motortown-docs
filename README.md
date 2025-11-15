@@ -23,7 +23,6 @@
   - [<u><strong>GET Endpoints</strong></u>](#get-endpoints)
 
     - [`/version`](#get-version)
-
     - [`/player/count`](#get-player-count)
     - [`/player/list`](#get-player-llist)
     - [`/player/banlist`](#get-player-banlist)
@@ -113,7 +112,7 @@ POST /player/kick/
 
 **Get parameters are provided in the request URL query string**, not as JSON.
 
-<h5><code>GET /version</code></h5>
+<h4><code>GET /version</code></h4>
 
   Get the current game version string of the server.
   <br>Version parts:
@@ -132,7 +131,7 @@ POST /player/kick/
   "data": { "version": "0.7.13+CT4(B804)" }
   ```
 
-<h5><code>GET /player/count</code></h5>
+<h4><code>GET /player/count</code></h4>
 
   Returns:
 
@@ -143,7 +142,7 @@ POST /player/kick/
   "data": { "num_players": 2 }
   ```
 
-<h5><code>GET /player/list</code></h5>
+<h4><code>GET /player/list</code></h4>
 
   Returns:
 
@@ -179,7 +178,7 @@ POST /player/kick/
   }
   ```
 
-<h5><code>GET /player/banlist</code></h5>
+<h4><code>GET /player/banlist</code></h4>
 
   Returns:
 
@@ -198,7 +197,7 @@ POST /player/kick/
       }
   ```
 
-<h5><code>GET /player/role/list</code></h5>
+<h4><code>GET /player/role/list</code></h4>
 
   Returns an object of 0-indexed player objects matching the input role type.
 
@@ -234,7 +233,7 @@ POST /player/kick/
   }
   ```
 
-<h5><code>GET /delivery/sites</code></h5>
+<h4><code>GET /delivery/sites</code></h4>
 
   Returns an object of 0-indexed keys of job sites in the world. A job site may have multiple in-game markers which refer to the same inventory and delivery jobs (contracts).
 
@@ -345,7 +344,7 @@ POST /player/kick/
   }
   ```
 
-<h5><code>GET /housing/list</code></h5>
+<h4><code>GET /housing/list</code></h4>
 
   Get all the player-ownable houses on the map, indexed by name.
 
@@ -379,7 +378,7 @@ In general, for a successful request, the return object will have:
 
 <br>
 
-<h5><code>POST /chat</code></h5>
+<h4><code>POST /chat</code></h4>
 
   Send an announcement or a message to the server. No formatting is applied to chat messages, i.e. does not automatically start with `[SERVER]` or similar.
 
@@ -398,7 +397,7 @@ In general, for a successful request, the return object will have:
   *Success*:
     - `message` will be `message sent`.
 
-<h5><code>POST /player/kick</code></h5>
+<h4><code>POST /player/kick</code></h4>
 
   Kick a player by Steam ID.
 
@@ -423,7 +422,7 @@ In general, for a successful request, the return object will have:
   }
   ```
 
-<h5><code>POST /player/ban</code></h5>
+<h4><code>POST /player/ban</code></h4>
 
   Ban a player by their Steam ID. If the player is on the server, they will be kicked and shown the `reason` message in a dialog box. They'll be unable to rejoin the server until `hours` has passed, or permanently if not provided.
 
@@ -457,7 +456,7 @@ In general, for a successful request, the return object will have:
 
 <p></p>
 
-<h5><code>POST /player/unban</code></h5>
+<h4><code>POST /player/unban</code></h4>
 
   Parameters:
 
@@ -482,7 +481,7 @@ In general, for a successful request, the return object will have:
 
 <p></p>
 
-<h5><code>POST /player/role/add</code></h5>
+<h4><code>POST /player/role/add</code></h4>
 
   Add the player by Steam ID to the named role. Results in an immediate role change for an online player, and updates `GameUserSettings.ini` with the entry.
 
@@ -509,7 +508,7 @@ In general, for a successful request, the return object will have:
 
 <p></p>
 
-<h5><code>POST /player/role/remove</code></h5>
+<h4><code>POST /player/role/remove</code></h4>
 
   Remove the player by Steam ID to the named role. Results in an immediate role change for an online player, and updates `GameUserSettings.ini` by removing the entry.
 
