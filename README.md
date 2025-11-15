@@ -22,10 +22,27 @@
 
   - [<u><strong>GET Endpoints</strong></u>](#get-endpoints)
 
+    - [`/version`](#get-version)
+
+    - [`/player/count`](#get-player-count)
+    - [`/player/list`](#get-player-llist)
+    - [`/player/banlist`](#get-player-banlist)
+    - [`/player/role/list`](#get-player-role-list)
+    - [`/delivery/sites`](#get-delivery-sites)
+    - [`/housing/list`](#get-housing-list)
+
   - [<u><strong>POST Endpoints</strong></u>](#get-endpoints)
 
+    - [`/chat`](#post-chat)
+    - [`/player/kick`](#post-player-kick)
+    - [`/player/ban`](#post-player-ban)
+    - [`/player/unban`](#post-player-unban)
+    - [`/player/role/add`](#post-player-role-add)
+    - [`/player/role/remove`](#post-player-role-remove)
+
+
 ## Hosting Web API Server
-You can enable Web API Server to get server status and player information.
+You can enable Web API Server to get server status and player/delivery/housing information, send chat/announce messages, kick and ban players, and change player roles.
 
 ### `DedicatedServerConfig.json` Parameters
 
@@ -96,7 +113,7 @@ POST /player/kick/
 
 **Get parameters are provided in the request URL query string**, not as JSON.
 
-- **`GET /version`**
+- <h5><code>GET /version</code></h5>
 
   Get the current game version string of the server.
   <br>Version parts:
@@ -115,7 +132,7 @@ POST /player/kick/
   "data": { "version": "0.7.13+CT4(B804)" }
   ```
 
-- **`GET /player/count`**
+- <h5><code>GET /player/count</code></h5>
 
   Returns:
 
@@ -126,7 +143,7 @@ POST /player/kick/
   "data": { "num_players": 2 }
   ```
 
-- **`GET /player/list`**
+- <h5><code>GET /player/list</code></h5>
 
   Returns:
 
@@ -162,7 +179,7 @@ POST /player/kick/
   }
   ```
 
-- **`GET /player/banlist`**
+- <h5><code>GET /player/banlist`</code><h5>
 
   Returns:
 
@@ -181,7 +198,7 @@ POST /player/kick/
       }
   ```
 
-- **`GET /player/role/list`**
+- <h5><code>GET /player/role/list</code><h5>
 
   Returns an object of 0-indexed player objects matching the input role type.
 
@@ -217,7 +234,7 @@ POST /player/kick/
   }
   ```
 
-- **`GET /delivery/sites`**
+- <h5><code>GET /delivery/sites</code></h5>
 
   Returns an object of 0-indexed keys of job sites in the world. A job site may have multiple in-game markers which refer to the same inventory and delivery jobs (contracts).
 
@@ -328,7 +345,7 @@ POST /player/kick/
   }
   ```
 
-- **`GET /housing/list`**
+- <h5><code>GET /housing/list</code></h5>
 
   Get all the player-ownable houses on the map, indexed by name.
 
@@ -362,7 +379,7 @@ In general, for a successful request, the return object will have:
 
 <br>
 
-- **`POST /chat`**
+- <h5><code>POST /chat</code><h5>
 
   Send an announcement or a message to the server. No formatting is applied to chat messages, i.e. does not automatically start with `[SERVER]` or similar.
 
@@ -381,7 +398,7 @@ In general, for a successful request, the return object will have:
   *Success*:
     - `message` will be `message sent`.
 
-- **`POST /player/kick`**
+- <h5><code>POST /player/kick</code><h5>
 
   Kick a player by Steam ID.
 
@@ -406,7 +423,7 @@ In general, for a successful request, the return object will have:
   }
   ```
 
-- **`POST /player/ban`**
+- <h5><code>POST /player/ban</code></h5>
 
   Ban a player by their Steam ID. If the player is on the server, they will be kicked and shown the `reason` message in a dialog box. They'll be unable to rejoin the server until `hours` has passed, or permanently if not provided.
 
@@ -440,7 +457,7 @@ In general, for a successful request, the return object will have:
 
 <p></p>
 
-- **`POST /player/unban`**
+- <h5><code>POST /player/unban</code></h5>
 
   Parameters:
 
@@ -465,7 +482,7 @@ In general, for a successful request, the return object will have:
 
 <p></p>
 
-- **`POST /player/role/add`**
+- <h5><code>POST /player/role/add</code></h5>
 
   Add the player by Steam ID to the named role. Results in an immediate role change for an online player, and updates `GameUserSettings.ini` with the entry.
 
@@ -492,7 +509,7 @@ In general, for a successful request, the return object will have:
 
 <p></p>
 
-- **`POST /player/role/remove`**
+- <h5><code>POST /player/role/remove</code></h5>
 
   Remove the player by Steam ID to the named role. Results in an immediate role change for an online player, and updates `GameUserSettings.ini` by removing the entry.
 
