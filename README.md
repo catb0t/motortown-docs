@@ -10,19 +10,19 @@
 
 ## Contents
 
-- <u>[**Hosting Web API Server**](#hosting-web-api-server)</u>
+- [<u>**Hosting Web API Server**</u>](#hosting-web-api-server)
 
-  - <u>[**`DedicatedServerConfig.json` Parameters**](#DedicatedServerConfig.json-parameters)</u>
+  - [<u>**`DedicatedServerConfig.json` Parameters**</u>](#DedicatedServerConfig.json-parameters)
 
-  - <u>[**About Web API Return Values**](#about-web-api-return-values)</u>
+  - [<u>**About Web API Return Values**</u>](#about-web-api-return-values)
 
-  - <u>[**About Web API Password**](#about-web-api-password)</u>
+  - [<u>**About Web API Password**</u>](#about-web-api-password)
 
-- <u>[**Web API Endpoint List**](#web-api-endpoint-list)</u>
+- [<u>**Web API Endpoint List**</u>](#web-api-endpoint-list)
 
-  - <u>[**GET Endpoints**](#get-endpoints)</u>
+  - [<u>**GET Endpoints**</u>](#get-endpoints)
 
-  - <u>[**POST Endpoints**](#get-endpoints)</u>
+  - [<u>**POST Endpoints**</u>](#get-endpoints)
 
 ## Hosting Web API Server
 You can enable Web API Server to get server status and player information.
