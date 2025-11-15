@@ -374,7 +374,8 @@ In general, for a successful request, the return object will have:
 
   Returns:
 
-  The top-level `data` key will be empty. Check the `message` string key for the message and the `succeeded` boolean key for whether the server thinks it did what you asked.
+  *Success*:
+    - `message` will be `Player kicked`
 
   Example:
 
