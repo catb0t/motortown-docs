@@ -400,6 +400,9 @@ In general, for a successful request, the return object will have:
   <br>If missing, the ban will be applied permanently.
   - `reason` (optional. reason for ban.)
 
+TODO:
+
+```
   POST /player/unban
   parameters
     unique_id (required. player's unique_id from player/banlist)
@@ -414,3 +417,5 @@ In general, for a successful request, the return object will have:
   parameters
     role (required. set player role "admin" or "police".)
     unique_id (required. player's unique_id from player/list)
+```
+
