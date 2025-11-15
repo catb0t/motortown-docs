@@ -34,8 +34,7 @@ You can enable Web API Server to get server status and player information.
 
   You can use a library to host an HTTPS forwarder on your server, which you can contact encrypted, and forward requests to the local machine's Web API.
 
-  It's recommended to change the default port, and be aware that it's non-TLS HTTP.
-  </strong>
+  It's recommended to change the default port, and be aware that it's non-TLS HTTP.</strong>
 
 ### Web API Return Values
 
