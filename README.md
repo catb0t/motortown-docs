@@ -12,7 +12,7 @@
 
 - [<u><strong>Hosting Web API Server</strong></u>](#hosting-web-api-server)
 
-  - [<u><strong>`DedicatedServerConfig.json` Parameters</strong></u>](#DedicatedServerConfig.json-parameters)
+  - [<u><strong><code>DedicatedServerConfig.json</code> Parameters</strong></u>](#DedicatedServerConfig.json-parameters)
 
   - [<u><strong>About Web API Return Values</strong></u>](#about-web-api-return-values)
 
