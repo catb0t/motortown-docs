@@ -26,15 +26,15 @@ You can enable Web API Server to get server status and player information.
   Set TCP port for Web API Server (**Default**: 8080)
   <br>This TCP port can be opened in firewall if you want to use the API from a remote client.
 
-  <strong>The API and its password are not encrypted for transport, and appear in plaintext in web traffic.
+  **The API and its password are not encrypted for transport, and appear in plaintext in web traffic.**
 
-  Exposing the Web API to the public internet is not recommended, as an attacker can intercept the password and make requests on their own.
+  **Exposing the Web API to the public internet is not recommended, as an attacker can intercept the password and make requests on their own.**
 
-  Until the API is HTTPS, best practise is to close the Dedi's own Web API port and make all API calls from the same local server machine that is running the Dedi.
+  **Until the API is HTTPS, best practise is to close the Dedi's own Web API port and make all API calls from the same local server machine that is running the Dedi.**
 
-  You can use a library to host an HTTPS forwarder on your server, which you can contact encrypted, and forward requests to the local machine's Web API.
+  **You can use a language like Python and an HTTPS/TLS server library to host an HTTPS forwarder on your server, which you can contact encrypted, and forward remote requests to the local machine's Web API.**
 
-  It's recommended to change the default port, and be aware that it's non-TLS HTTP.</strong>
+  **It's recommended to change the default port, and be aware that it's non-TLS HTTP.**
 
 ### Web API Return Values
 
