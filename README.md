@@ -74,7 +74,7 @@ API returns JSON string with following format
 - `data`: `object` contains return data
 - `message`: `string` contains simple message, or error message if API call failed
 - `succeeded`: `bool` true if API call succeeded, false if failed
-- `code`: `int` Undocumented. Assumed to be
+- `code`: `int` 0 for success; undocumented otherwise.
 
 ```json
 {
